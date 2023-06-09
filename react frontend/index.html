@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body >
+    <h3 id="heading">Code Editor</h3>
+    <div class="controls">
+        <div class="control">
+            <label for="languageSelect">  Select Language:</label>
+            <select id="languageSelect">
+                <option value="c_cpp">c++</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+        </div>
+        <div class="controllab">
+            <label for="themeSelect">Theme:</label>
+            <select id="themeSelect">
+                <option value="twilight">Twilight</option>
+                <option value="github">GitHub</option>
+                <option value="monokai">Monokai</option>
+                <option value="clouds">Clouds</option>
+                <option value="xcode">Xcode</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="terminal">Terminal</option>
+                <option value="solarized_light">Solarized Light</option>
+            </select>
+        </div>
+        <div class="controlfont">
+            <label for="fontSizeInput">Font Size:</label>
+            <input type="number" id="fontSizeInput" value="14">
+        </div>
+        
+        
+    </div>
+
+    <div class="container">
+        <div class="editor-container">
+          <div id="editor"></div>
+        </div>
+        <div class="side-container">
+            <div id="inp">
+                <h4 class="h">Input</h4>
+                <button id="runButton">Run</button>
+            </div>
+            
+            <div class="input-output-container">
+            <div id="input-container">
+              
+              <textarea id="inputArea"></textarea>
+            </div>
+            <h4 id="out">Output</h4>
+            <div id="output-container">
+              
+              <pre id="outputArea"></pre>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.22.0/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
+
+
+    
+    <script src="index.js"></script>
+    
+</body>
+</html>
