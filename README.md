@@ -1,12 +1,12 @@
-# IDE
-IDE
+## IDE
+
 A user-friendly online text editor for competitive programming with auto complete features
 It currently supports cpp, python, Java.
 
 Installation
 Clone the repository
 
-git clone https://github.com/Ajay2908/IDE.git
+git clone https://github.com/pranav154/IDE.git
 Dependencies
 Navigate to the root of repo and run
 
