@@ -3,10 +3,10 @@
 A user-friendly online text editor for competitive programming with auto complete features
 It currently supports cpp, python, Java.
 
-Installation
+#Installation
 Clone the repository
 
-git clone https://github.com/pranav154/IDE.git
+'git clone https://github.com/pranav154/IDE.git'
 Dependencies
 Navigate to the root of repo and run
 
