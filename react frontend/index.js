@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', function() {
   //   }
   // });
 
-  // Update code template when language selection changes
+ 
   languageSelect.addEventListener('change', function() {
     const selectedLanguage = languageSelect.value;
     if(selectedLanguage === "c++"){
@@ -73,9 +73,9 @@ window.addEventListener('DOMContentLoaded', function() {
     setLanguageTemplate(selectedLanguage);
   });
 
-  // Function to set the language template
+ 
   function setLanguageTemplate(language) {
-    const templateFile = `/templates/${language}.txt`; // Path to the language template file
+    const templateFile = `/templates/${language}.txt`; 
 
     // Make an AJAX request to fetch the template file
     const xhr = new XMLHttpRequest();
@@ -93,15 +93,15 @@ window.addEventListener('DOMContentLoaded', function() {
       // Code change event
   editor.getSession().on('change', function(e) {
     const code = editor.getValue();
-    console.log(code); // Replace with desired code handling logic
+    console.log(code); 
   });
 
-  // Keyboard shortcut example (Ctrl + F)
+ 
   editor.commands.addCommand({
     name: 'find',
     bindKey: { win: 'Ctrl-F', mac: 'Command-F' },
     exec: function(editor) {
-    // Handle find functionality here
+    
     }
   });
 
@@ -109,7 +109,7 @@ window.addEventListener('DOMContentLoaded', function() {
   editor.getSession().setFoldStyle('markbeginend');
   editor.getSession().setUseWrapMode(true);
 
-  // Find and replace
+ 
   editor.commands.addCommand({
     name: 'replace',
     bindKey: { win: 'Ctrl-H', mac: 'Command-Option-F' },
@@ -118,31 +118,31 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-// Auto-completion
+
   editor.setOptions({
     enableBasicAutocompletion: true,
     enableLiveAutocompletion: true
   });
 
-  // Get the "Run" button element
+ 
   const runButton = document.getElementById('runButton');
 
-  // Add a click event listener to the "Run" button
+  
   runButton.addEventListener('click', submitCode);
 
-  // Function to handle the submission of code and input
+  
   function submitCode() {
     const code = editor.getValue(); // Get the code from the editor
     const input = inputEditor.getValue(); // Get the input from the input field
     const language = document.getElementById('languageSelect').value; // Get the selected language
 
-    // Create a request payload object
+    
     const payload = {
       code: code,
       input: input,
       language: language
     };
-    // Make an AJAX request to the server
+    
     fetch('http://localhost:4040/run', {
       method: 'POST',
       headers: {
@@ -152,13 +152,13 @@ window.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-      // Handle the response from the server
+     
 
       outputEditor.setValue(data.output);
       console.log(data.output);
     })
     .catch(error => {
-      // Handle any errors that occur during the request
+      
       console.error('Error:', error);
     });
     }
